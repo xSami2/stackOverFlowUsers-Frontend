@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="fxAncorPane" prefHeight="480.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wedasoft.javafxspringbootmavenapp.controller.stackOverFlowController">
+    <children>
+        <TableView fx:id="fxTable" layoutX="177.0" layoutY="130.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="50.0">
+            <columns>
+                <TableColumn fx:id="fxUserIdColumn" prefWidth="115.0" text="user_id" />
+                <TableColumn fx:id="fxDisplayNameColumn" prefWidth="133.0" text="display_name" />
+                <TableColumn fx:id="fxReputation" prefWidth="92.0" text="reputation" />
+                <TableColumn fx:id="fxLastAccessDate" prefWidth="117.0" text="last_access_date" />
+                <TableColumn fx:id="fxAction" prefWidth="145.0" text="Action" />
+            </columns>
+        </TableView>
+        <SplitMenuButton fx:id="fxExport" layoutX="516.0" layoutY="158.0" mnemonicParsing="false" onAction="#export" text="Export" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+            <items>
+                <MenuItem fx:id="fxAscending" mnemonicParsing="false" onAction="#exportAscending" text="Ascending" />
+                <MenuItem fx:id="fxDescending" mnemonicParsing="false" onAction="#exportDescending" text="Descending" />
+            </items>
+        </SplitMenuButton>
+      <CheckBox fx:id="fxCheckBoxBookmarkedUsers" layoutX="424.0" layoutY="14.0" mnemonicParsing="false" onAction="#showBookmarkedUsers" text="Show bookmarked Users" AnchorPane.leftAnchor="440.0" AnchorPane.topAnchor="14.0" />
+      <GridPane fx:id="fxUserInfoGridPane" gridLinesVisible="true" layoutX="151.0" layoutY="75.0" prefHeight="400.0" prefWidth="330.0" AnchorPane.rightAnchor="650.0" AnchorPane.topAnchor="50.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="10.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="75.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="9.0" prefHeight="145.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label fx:id="fxUserIdLabel" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="userId">
+               <padding>
+                  <Insets left="5.0" />
+               </padding></Label>
+            <Label fx:id="fxAccountIdLabel" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="accountId" GridPane.rowIndex="1">
+               <padding>
+                  <Insets left="5.0" />
+               </padding></Label>
+            <Label fx:id="fxDisplayNameLabel" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="displayName" GridPane.rowIndex="2">
+               <padding>
+                  <Insets left="5.0" />
+               </padding></Label>
+            <Label fx:id="fxUserAgeLabel" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="userAge" GridPane.rowIndex="3">
+               <padding>
+                  <Insets left="5.0" />
+               </padding></Label>
+            <Label fx:id="fxReputationLabel" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="reputation" GridPane.rowIndex="4">
+               <padding>
+                  <Insets left="5.0" />
+               </padding></Label>
+            <Label fx:id="fxUserTypeLabel" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="userType" GridPane.rowIndex="6">
+               <padding>
+                  <Insets left="5.0" />
+               </padding></Label>
+            <Label fx:id="fxLocationLabel" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="location" GridPane.rowIndex="5">
+               <padding>
+                  <Insets left="5.0" />
+               </padding></Label>
+            <Text fx:id="fxAccountIdText" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="165.13671875" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin></Text>
+            <Text fx:id="fxUserIdText" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="164.13671875" GridPane.columnIndex="1">
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin></Text>
+            <Text fx:id="fxDisplayNameText" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="142.13671875" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin></Text>
+            <Text fx:id="fxUserAgeText" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="196.13671875" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin></Text>
+            <Text fx:id="fxReputationText" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="163.13671875" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin></Text>
+            <Text fx:id="fxLocationText" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="196.13671875" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin></Text>
+            <Text fx:id="fxUserTypeText" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="163.13671875" GridPane.columnIndex="1" GridPane.rowIndex="6">
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin></Text>
+            <Label fx:id="fxViewCountLabel" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="VIEW_COUNT" GridPane.rowIndex="7">
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </Label>
+            <Label fx:id="FXQuestionCountLabel" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="QUESTION_COUNT" GridPane.rowIndex="8">
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </Label>
+            <Label fx:id="fxAnswerCountLabel" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="ANSWER_COUNT" GridPane.rowIndex="9">
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin>
+            </Label>
+            <Text fx:id="fxViewCountText" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="163.13671875" GridPane.columnIndex="1" GridPane.rowIndex="7">
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin>
+            </Text>
+            <Text fx:id="fxQuestionCountText" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="163.13671875" GridPane.columnIndex="1" GridPane.rowIndex="8">
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin>
+            </Text>
+            <Text fx:id="fxAnswerCountText" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="195.13671875" GridPane.columnIndex="1" GridPane.rowIndex="9">
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin>
+            </Text>
+            <Label fx:id="fxProfileImagleLabel" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Profile Image" GridPane.rowIndex="10">
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </Label>
+            <ImageView fx:id="fxProfileImageView" fitHeight="143.0" fitWidth="199.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+         </children>
+      </GridPane>
+    </children>
+</AnchorPane>
