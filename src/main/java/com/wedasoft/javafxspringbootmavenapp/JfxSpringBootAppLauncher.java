@@ -78,7 +78,7 @@ public class JfxSpringBootAppLauncher {
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/stackOverFlowUsers.fxml"));
                 fxmlLoader.setControllerFactory(springApplicationContext::getBean);
                 Parent root = fxmlLoader.load();
-                Scene scene = new Scene(root, 1050, 480);
+                Scene scene = new Scene(root, 1050, 470);
                 Stage stage = event.getStage();
                 stage.setScene(scene);
                 stage.setTitle(this.applicationTitle);

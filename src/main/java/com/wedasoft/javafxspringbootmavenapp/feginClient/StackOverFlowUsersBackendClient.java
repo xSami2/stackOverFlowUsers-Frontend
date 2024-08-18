@@ -9,23 +9,24 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
-@FeignClient(name = "stackOverFlowHttpClient" , url ="http://localhost:9091/sof")
+@FeignClient(name = "stackOverFlowHttpClient" , url ="http://localhost:9091/${api.endpoint.url}")
 public interface StackOverFlowUsersBackendClient {
 
 
-    @GetMapping
-    User[] getUsers();
+    @GetMapping("/users")
+    List<User> getUsers();
 
-    @GetMapping("/bookmarkedUsersIds")
+    @GetMapping("/bookmark/bookmarkedUsersIds")
     List<Long> getBookmarkedUsersIds();
 
-    @PostMapping
+
+    @PostMapping("/export")
     void exportStackOverFlowUsersFile(ExportRequest exportRequest);
 
-    @PostMapping("/bookmarkUser")
+    @PostMapping("/bookmark/bookmarkUser")
     void saveBookmarkUser(Long userId);
 
-    @DeleteMapping("/unmarkUser")
+    @DeleteMapping("/bookmark/unmarkUser")
     void deleteBookmarkUser(Long userId);
 
 
