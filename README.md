@@ -79,3 +79,7 @@ __3__ - Run the backend application first.
 
 __4__ - After the backend is running, start the frontend application.
 
+
+# Note
+
+the __.sofusers__ file will be Saved in the Backend Application in resource folder
