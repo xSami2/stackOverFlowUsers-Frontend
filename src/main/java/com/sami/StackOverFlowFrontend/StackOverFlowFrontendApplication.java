@@ -1,4 +1,4 @@
-package com.wedasoft.javafxspringbootmavenapp;
+package com.sami.StackOverFlowFrontend;
 
 import javafx.application.Application;
 import javafx.application.HostServices;
@@ -20,7 +20,7 @@ import java.io.IOException;
 
 @EnableFeignClients
 @SpringBootApplication
-public class JfxSpringBootAppLauncher {
+public class StackOverFlowFrontendApplication {
 
 
     public static void main(String[] args) {
@@ -34,7 +34,7 @@ public class JfxSpringBootAppLauncher {
         @Override
         public void init() {
             springApplicationContext = new SpringApplicationBuilder()
-                    .sources(JfxSpringBootAppLauncher.class)
+                    .sources(StackOverFlowFrontendApplication.class)
                     .initializers((ApplicationContextInitializer<GenericApplicationContext>) applicationContext -> {
                         applicationContext.registerBean(Application.class, () -> this);
                         applicationContext.registerBean(Parameters.class, this::getParameters);

@@ -1,4 +1,4 @@
-package com.wedasoft.javafxspringbootmavenapp.model;
+package com.sami.StackOverFlowFrontend.model;
 
 import lombok.Data;
 

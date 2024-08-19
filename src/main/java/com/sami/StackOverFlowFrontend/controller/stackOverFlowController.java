@@ -1,8 +1,8 @@
-package com.wedasoft.javafxspringbootmavenapp.controller;
+package com.sami.StackOverFlowFrontend.controller;
 
-import com.wedasoft.javafxspringbootmavenapp.feginClient.StackOverFlowUsersBackendClient;
-import com.wedasoft.javafxspringbootmavenapp.model.ExportRequest;
-import com.wedasoft.javafxspringbootmavenapp.model.User;
+import com.sami.StackOverFlowFrontend.feginClient.StackOverFlowUsersBackendClient;
+import com.sami.StackOverFlowFrontend.model.ExportRequest;
+import com.sami.StackOverFlowFrontend.model.User;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;

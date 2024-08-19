@@ -1,7 +1,7 @@
-package com.wedasoft.javafxspringbootmavenapp.feginClient;
+package com.sami.StackOverFlowFrontend.feginClient;
 
-import com.wedasoft.javafxspringbootmavenapp.model.ExportRequest;
-import com.wedasoft.javafxspringbootmavenapp.model.User;
+import com.sami.StackOverFlowFrontend.model.ExportRequest;
+import com.sami.StackOverFlowFrontend.model.User;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
