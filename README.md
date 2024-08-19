@@ -80,6 +80,47 @@ __3__ - Run the backend application first.
 __4__ - After the backend is running, start the frontend application.
 
 
+# Test Cases
+
+- __Test Case 1: Fetch SOF Users__
+
+>Expected Result: The application displays a list of users with fields: name, userId, reputation, lastAccessDate.
+
+- __Test Case 2: Export Users Users in Normal Order__
+
+>Expected Result: The file is created and contains the user data in the normal order.
+
+- __Test Case 3: Export Users In Ascending Order__
+
+>Expected Result: The File is exported and displayed in ascending order by userId.
+
+- __Test Case 4: Export Users In Descending Order__
+
+
+>Expected Result:  The File is exported and displayed in descending order by userId.
+
+- __Test Case 5: Bookmark a User__
+
+
+>Expected Result: The user is added to the bookmark list.
+
+- __Test Case 7: Unbookmark a User__
+
+
+>Expected Result: The user is removed from the bookmark list.
+
+- __Test Case 8: Export Bookmarked Users__
+
+
+>Expected Result: The file is created and contains the bookmarked users.
+
+- __Test Case 9: Fetch Bookmarked Users__
+
+>Expected Result: Only bookmarked users are displayed.
+- __Test Case 10: View User Details__
+>Expected Result: The detailed information of the selected user is displayed, same as the __.sofusers file__ .
+
+
 # Note
 
 the __.sofusers__ file will be Saved in the Backend Application in resource folder
