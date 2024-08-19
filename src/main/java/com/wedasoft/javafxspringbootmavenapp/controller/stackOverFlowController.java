@@ -104,8 +104,8 @@ public class stackOverFlowController {
         ExportRequest exportRequest = new ExportRequest(dataTable , "Normal");
         
         for (User user : dataTable) {
-            long timeElapsedInSeconds = getUserAgeInTimeElapsedInSeconds(user);
-            user.setUserAge(timeElapsedInSeconds);
+            String userAge = getUserAgeInHumanReformatted(user);
+            user.setUserAge(userAge);
         }
         
         stackOverFlowUsersBackendClient.exportStackOverFlowUsersFile(exportRequest);
@@ -113,16 +113,16 @@ public class stackOverFlowController {
     public void exportAscending(){
         ExportRequest exportRequest = new ExportRequest(dataTable , "Ascending");
         for (User user : dataTable) {
-            long timeElapsedInSeconds = getUserAgeInTimeElapsedInSeconds(user);
-            user.setUserAge(timeElapsedInSeconds);
+            String userAge = getUserAgeInHumanReformatted(user);
+            user.setUserAge(userAge);
         }
         stackOverFlowUsersBackendClient.exportStackOverFlowUsersFile(exportRequest);
     }
     public void exportDescending(){
         ExportRequest exportRequest = new ExportRequest(dataTable , "Descending");
         for (User user : dataTable) {
-            long timeElapsedInSeconds = getUserAgeInTimeElapsedInSeconds(user);
-            user.setUserAge(timeElapsedInSeconds);
+            String userAge = getUserAgeInHumanReformatted(user);
+            user.setUserAge(userAge);
         }
         stackOverFlowUsersBackendClient.exportStackOverFlowUsersFile(exportRequest);
 
@@ -268,7 +268,7 @@ public class stackOverFlowController {
 
     private static long getUserAgeInTimeElapsedInSeconds(User user) {
         long currentTimestamp =  System.currentTimeMillis()/1000;
-        long userTimestamp = user.getUserAge();
+        long userTimestamp = user.getCreation_date();
         return currentTimestamp - userTimestamp;
     }
 
