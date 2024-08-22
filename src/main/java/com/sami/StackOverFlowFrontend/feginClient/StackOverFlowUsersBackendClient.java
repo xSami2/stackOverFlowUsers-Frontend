@@ -1,5 +1,6 @@
 package com.sami.StackOverFlowFrontend.feginClient;
 
+import com.sami.StackOverFlowFrontend.model.API_Responses;
 import com.sami.StackOverFlowFrontend.model.ExportRequest;
 import com.sami.StackOverFlowFrontend.model.User;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -14,20 +15,20 @@ public interface StackOverFlowUsersBackendClient {
 
 
     @GetMapping("/users")
-    List<User> getUsers();
+    API_Responses<List<User>> getUsers();
 
     @GetMapping("/bookmark/bookmarkedUsersIds")
-    List<Long> getBookmarkedUsersIds();
+    API_Responses<List<Long>> getBookmarkedUsersIds();
 
 
     @PostMapping("/export")
-    void exportStackOverFlowUsersFile(ExportRequest exportRequest);
+    API_Responses<String> exportStackOverFlowUsersFile(ExportRequest exportRequest);
 
     @PostMapping("/bookmark/bookmarkUser")
-    void saveBookmarkUser(Long userId);
+    API_Responses<String> saveBookmarkUser(Long userId);
 
     @DeleteMapping("/bookmark/unmarkUser")
-    void deleteBookmarkUser(Long userId);
+    API_Responses<String> deleteBookmarkUser(Long userId);
 
 
 

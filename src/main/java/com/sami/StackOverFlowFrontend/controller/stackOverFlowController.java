@@ -1,6 +1,7 @@
 package com.sami.StackOverFlowFrontend.controller;
 
 import com.sami.StackOverFlowFrontend.feginClient.StackOverFlowUsersBackendClient;
+import com.sami.StackOverFlowFrontend.model.API_Responses;
 import com.sami.StackOverFlowFrontend.model.ExportRequest;
 import com.sami.StackOverFlowFrontend.model.User;
 import javafx.beans.property.SimpleObjectProperty;
@@ -45,7 +46,12 @@ public class stackOverFlowController {
                 new SimpleObjectProperty<>(cellData.getValue().getLast_access_date()));
 
 
-        usersList = stackOverFlowUsersBackendClient.getUsers();
+
+        API_Responses<List<User>> API_Responses = stackOverFlowUsersBackendClient.getUsers();
+
+        List<User> usersList = API_Responses.getData();
+        System.out.println(usersList);
+
         dataTable = usersList;
 
 
@@ -141,8 +147,11 @@ public class stackOverFlowController {
 
         if(fxCheckBoxBookmarkedUsers.isSelected()){
 
-            List<Long>  bookmarkedUsersIds =  stackOverFlowUsersBackendClient.getBookmarkedUsersIds();
+            API_Responses<List<Long>> API_Responses =  stackOverFlowUsersBackendClient.getBookmarkedUsersIds();
+            List<Long> bookmarkedUsersIds = API_Responses.getData();
+            System.out.println(bookmarkedUsersIds);
             List<User>  bookmarkedUsersList = new ArrayList<>();
+            System.out.println(usersList);
 
             for (Long bookmarkedUserId : bookmarkedUsersIds) {
 
@@ -175,6 +184,8 @@ public class stackOverFlowController {
 
 
     }
+
+
     private void addUnmarkShowButtons() {
         fxAction.setCellFactory(col -> new TableCell<User, Void>() {
 
@@ -260,12 +271,10 @@ public class stackOverFlowController {
         fxProfileImageView.setImage(profileImage);
 
     }
-
     private static String getUserAgeInHumanReformatted(User user) {
         long timeElapsedInSeconds = getUserAgeInTimeElapsedInSeconds(user);
         return (timeElapsedInSeconds / 31556926) + " years and " + (timeElapsedInSeconds % 31556926) / 2629743 + " months ago";
     }
-
     private static long getUserAgeInTimeElapsedInSeconds(User user) {
         long currentTimestamp =  System.currentTimeMillis()/1000;
         long userTimestamp = user.getCreation_date();
