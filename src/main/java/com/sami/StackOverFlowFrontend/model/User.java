@@ -10,7 +10,6 @@ public class User {
     private long account_id;
     private long last_access_date;
     private String display_name;
-    private long creation_date;
     private String userAge;
     private long reputation;
     private String location;
